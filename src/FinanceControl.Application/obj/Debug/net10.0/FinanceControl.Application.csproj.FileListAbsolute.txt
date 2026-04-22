@@ -1,0 +1,15 @@
+C:\Dev\finance-control\src\FinanceControl.Application\bin\Debug\net10.0\FinanceControl.Application.deps.json
+C:\Dev\finance-control\src\FinanceControl.Application\bin\Debug\net10.0\FinanceControl.Application.dll
+C:\Dev\finance-control\src\FinanceControl.Application\bin\Debug\net10.0\FinanceControl.Application.pdb
+C:\Dev\finance-control\src\FinanceControl.Application\bin\Debug\net10.0\FinanceControl.Domain.dll
+C:\Dev\finance-control\src\FinanceControl.Application\bin\Debug\net10.0\FinanceControl.Domain.pdb
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.csproj.AssemblyReference.cache
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.AssemblyInfoInputs.cache
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.AssemblyInfo.cs
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.csproj.CoreCompileInputs.cache
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceC.699E4819.Up2Date
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.dll
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\refint\FinanceControl.Application.dll
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\FinanceControl.Application.pdb
+C:\Dev\finance-control\src\FinanceControl.Application\obj\Debug\net10.0\ref\FinanceControl.Application.dll
