@@ -44,8 +44,8 @@ public class UserMapping : BaseMapping<User>
             .IsRequired()
             .HasColumnName("is_active");
 
-        builder.Property(u => u.RefreshToken)
-            .HasColumnName("refresh_token");
+        builder.Property(u => u.RefreshTokenHash)
+            .HasColumnName("refresh_token_hash");
 
         builder.Property(u => u.RefreshTokenExpiresAt)
             .HasColumnName("refresh_token_expires_at")

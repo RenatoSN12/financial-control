@@ -11,7 +11,7 @@ public class User : AggregateRoot
     public string PasswordHash { get; private set; } = string.Empty;
     public bool IsActive { get; private set; }
     
-    public string? RefreshToken { get; private set; }
+    public string? RefreshTokenHash { get; private set; }
     public DateTime? RefreshTokenExpiresAt { get; private set; }
 
     private readonly List<Card> _cards = [];
@@ -49,6 +49,12 @@ public class User : AggregateRoot
     )
     {
         return new User(firstName, lastName, email, passwordHash);
+    }
+
+    public void UpdateRefreshToken(string refreshTokenHash, DateTime expiresAt)
+    {
+        RefreshTokenHash = refreshTokenHash;
+        RefreshTokenExpiresAt = expiresAt;
     }
 
     #endregion

@@ -1,6 +1,7 @@
 using FinanceControl.Application.Interfaces;
 using FinanceControl.Domain.Repositories;
 using FinanceControl.Domain.Services;
+using FinanceControl.Infrastructure.Authentication;
 using FinanceControl.Infrastructure.Data;
 using FinanceControl.Infrastructure.Queries;
 using FinanceControl.Infrastructure.Repositories;
@@ -20,8 +21,11 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")!));
 
+        services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
+
         // Services
         services.AddSingleton<IPasswordHasher, PasswordHasher>();
+        services.AddSingleton<IJwtService, JwtService>();
 
         // Repositórios de escrita — usados pelos Command Handlers (com tracking)
         services.AddScoped<IUnitOfWork, UnitOfWork>();

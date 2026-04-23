@@ -1,5 +1,6 @@
 using FinanceControl.Application.Abstractions;
 using FinanceControl.Application.UseCases.Users.Commands.CreateUser;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceControl.Api.Controllers;
@@ -9,6 +10,7 @@ namespace FinanceControl.Api.Controllers;
 public class UserController(IDispatcher dispatcher) : ControllerBase
 {
     [HttpPost]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateUser(
@@ -17,6 +19,9 @@ public class UserController(IDispatcher dispatcher) : ControllerBase
     )
     {
         var result = await dispatcher.SendAsync(command, cancellationToken);
-        return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Error);
+        
+        return result.IsSuccess 
+            ? CreatedAtAction("colocar um nameof GetUser quando tiver", new { id = result.Value!.Id })
+            : BadRequest(result.Error);
     }
 }
