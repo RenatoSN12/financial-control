@@ -27,4 +27,19 @@ public class UserRepository(AppDbContext context)
                 u => u.Email.Address == email,
                 cancellationToken
             );
+
+    public async Task<User?> GetByRefreshTokenHashAsync(string refreshTokenHash, CancellationToken cancellationToken)
+        => await Context.Users
+            .FirstOrDefaultAsync(
+                u => u.RefreshTokenHash == refreshTokenHash &&
+                u.RefreshTokenExpiresAt > DateTime.UtcNow,
+                cancellationToken
+            );
+
+    public async Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+        => await Context.Users
+            .FirstOrDefaultAsync(
+                u => u.Id == id,
+                cancellationToken
+            );
 }

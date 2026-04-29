@@ -39,7 +39,15 @@ public class User : AggregateRoot
 
     #endregion
 
-    #region Functions
+    #region Methods
+
+    public bool IsRefreshTokenExpired() => RefreshTokenExpiresAt < DateTime.UtcNow;
+
+    public void RevokeRefreshToken()
+    {
+        RefreshTokenHash = null;
+        RefreshTokenExpiresAt = null;
+    }
 
     public static User Create(
         string firstName,
